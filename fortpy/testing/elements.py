@@ -181,7 +181,7 @@ class GlobalDeclaration(object):
 
         result.append(self.attributes["type"])
         if "kind" in self.attributes and self.attributes["kind"] is not None:
-            if self.attributes["type"] == "character" and "len=*" in kind:
+            if self.attributes["type"] == "character" and "len=*" in self.kind:
                 msg.warn("Assumed length character array defaulting to kind of 'len=100'. "
                          "Use a <global> tag to override this default.")
                 result.append("(100)")
