@@ -62,7 +62,8 @@ def makefile(identifier, dependencies, makepath, compileid,
     #the unit testing executable.
     linklibs = _add_explicit_includes(lines, dependencies, extralinks)
     if inclfortpy:
-        lines.append("\t\tfortpy.o \\")
+        linklibs=True
+        lines.append("LIBS= \t\tfortpy.o \\")
 
     lines.append("")
 
